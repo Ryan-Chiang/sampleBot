@@ -1,13 +1,17 @@
 import logging
 import asyncio, os, discord
 from discord.ext import commands
+from dotenv import load_dotenv
 
 # intents是要求機器人的權限
 intents = discord.Intents.all()
 # command_prefix是前綴符號，可以自由選擇($, #, &...)
 bot = commands.Bot(command_prefix="/", intents=intents)
 
+# 載入.env檔案
+load_dotenv()
 token = os.getenv("TOKEN")
+print(token)
 
 
 @bot.event
